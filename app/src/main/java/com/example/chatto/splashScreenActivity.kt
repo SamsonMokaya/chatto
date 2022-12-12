@@ -21,6 +21,7 @@ class splashScreenActivity : AppCompatActivity() {
 
         Handler(Looper.myLooper()!!).postDelayed(kotlinx.coroutines.Runnable {
             val intent = Intent(this, signUpActivity::class.java)
+            finish()
             startActivity(intent)
         },4000)
 
