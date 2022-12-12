@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">chatto</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="enter_your_name">Enter Your name</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="retype_your_password">Retype your password</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+</resources>
