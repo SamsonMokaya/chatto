@@ -8,7 +8,7 @@ import com.example.chatto.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var userrecyclerView : RecyclerView
+    private lateinit var userRecyclerView : RecyclerView
     private lateinit var userList:ArrayList<User>
     private lateinit var adapter : UserAdapter
     private lateinit var binding: ActivityMainBinding
