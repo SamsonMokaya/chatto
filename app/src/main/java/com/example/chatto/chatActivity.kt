@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
@@ -75,12 +76,16 @@ class chatActivity : AppCompatActivity() {
             val message =messageBox.text.toString()
             val messegaObject = Message(message, senderUid)
 
-            mDbRef.child("chats").child(senderRoom!!).child("messages").push()
-                .setValue(messegaObject).addOnSuccessListener {
-                    mDbRef.child("chats").child(receiverRoom!!).child("messages").push()
-                        .setValue(messegaObject)
-                }
-            messageBox.setText("")
+            if(message == ""){
+                Toast.makeText(this,"Enter a message", Toast.LENGTH_SHORT).show()
+            }else{
+                mDbRef.child("chats").child(senderRoom!!).child("messages").push()
+                    .setValue(messegaObject).addOnSuccessListener {
+                        mDbRef.child("chats").child(receiverRoom!!).child("messages").push()
+                            .setValue(messegaObject)
+                    }
+                messageBox.setText("")
+            }
         }
     }
 }
