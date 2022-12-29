@@ -28,6 +28,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.makeCallsBTN.setOnClickListener{
+            val intent = Intent(this, videoCallActivity::class.java)
+            startActivity(intent)
+        }
+
         firebaseAuth = FirebaseAuth.getInstance()
         mDBRef = FirebaseDatabase.getInstance().getReference()
 
